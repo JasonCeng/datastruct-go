@@ -7,6 +7,11 @@ func TestLinkList(t *testing.T) {
 	list.AppendNode(1)
 	list.AppendNode(2)
 	list.AppendNode(3)
+	list.AppendNode(4)
+	list.AppendNode(5)
+	list.AppendNode(6)
+	list.printLinkList()
+	list.DeleteNthFromEnd(3)
 	list.printLinkList()
 
 	list.PreAppendNode(0)

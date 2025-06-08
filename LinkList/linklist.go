@@ -72,6 +72,24 @@ func (l *LinkList) DeleteNode(value int) {
 	}
 }
 
+// 删：删除倒数第k个节点
+// 思路：采用双指针。1.先将p1向前移动k-1步；2.p1、p2同时向前移动，直至p1到达最后一个节点。3.将p2之前的一个元素的next指针指向p2之后的元素
+func (l *LinkList) DeleteNthFromEnd(k int) {
+	p1 := l.Head
+	p2 := l.Head
+	for i := 0; i < k; i++ {
+		p1 = p1.Next
+	}
+
+	for p1.Next != nil {
+		p1 = p1.Next
+		p2 = p2.Next
+	}
+
+	p2.Next = p2.Next.Next
+
+}
+
 // 查找：按值查找某个链表节点
 func (l *LinkList) SearchNode(value int) *Node {
 	current := l.Head
